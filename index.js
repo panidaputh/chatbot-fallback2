@@ -153,7 +153,7 @@ app.post("/webhook", async (req, res) => {
       const userData = snapshot.val() || {};
       const lastFallbackTime = userData.lastFallbackTime || 0;
       const currentTime = Date.now();
-      const COOLDOWN_PERIOD = 3600000; //เวลา Cooldown เป็นมิลลิวินาที
+      const COOLDOWN_PERIOD = 180000; //เวลา Cooldown เป็นมิลลิวินาที
 
       if (currentTime - lastFallbackTime >= COOLDOWN_PERIOD) {
         await userRef.update({
